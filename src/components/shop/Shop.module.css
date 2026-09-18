@@ -1,0 +1,295 @@
+.shop {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+  padding-block: 3rem 5rem;
+}
+
+.header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.productCount {
+  flex-shrink: 0;
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.productItem {
+  min-width: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.25rem;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.07);
+  transform: translateY(-3px);
+}
+
+.imageWrapper {
+  display: grid;
+  place-items: center;
+
+  aspect-ratio: 1;
+  padding: 2rem;
+
+  background: #f8f8f8;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  mix-blend-mode: multiply;
+
+  transition: transform 250ms ease;
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 1.25rem;
+}
+
+.title {
+  display: -webkit-box;
+  overflow: hidden;
+
+  margin: 0 0 0.65rem;
+
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 650;
+
+  -webkit-box-orient: vertical;
+}
+
+.description {
+  display: -webkit-box;
+  overflow: hidden;
+
+  margin: 0;
+
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+
+  -webkit-box-orient: vertical;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.price {
+  margin: 0;
+
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0.65rem;
+}
+
+.quantityLabel {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.quantityInput {
+  width: 100%;
+  min-width: 0;
+  height: 2.75rem;
+
+  padding-inline: 0.65rem;
+
+  font: inherit;
+  font-size: 0.9rem;
+  text-align: center;
+
+  border: 1px solid #d1d5db;
+  border-radius: 0.65rem;
+  background: #ffffff;
+
+  outline: none;
+}
+
+.quantityInput:focus-visible {
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgb(17 24 39 / 0.12);
+}
+
+.addButton {
+  min-height: 2.75rem;
+
+  padding: 0.65rem 1rem;
+
+  border: 0;
+  border-radius: 0.65rem;
+
+  background: #111827;
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.addButton:hover {
+  background: #374151;
+}
+
+.addButton:active {
+  transform: scale(0.98);
+}
+
+.addButton:focus-visible {
+  outline: 3px solid rgb(17 24 39 / 0.25);
+  outline-offset: 2px;
+}
+
+.status {
+  display: grid;
+  min-height: 50vh;
+  place-items: center;
+  text-align: center;
+}
+
+.status h1 {
+  margin-bottom: 0.5rem;
+}
+
+.status p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.visuallyHidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  padding: 0;
+  margin: -1px;
+
+  border: 0;
+
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .shop {
+    width: min(100% - 1.25rem, 1200px);
+    padding-block: 2rem 3rem;
+  }
+
+  .header {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 1.15;
+    padding: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .card,
+  .image,
+  .addButton {
+    transition: none;
+  }
+}
